@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
+    message(FATAL_ERROR "In-source builds are not supported!")
+endif()
+
 if(POLICY CMP0092)
     cmake_policy(SET CMP0092 NEW)
 endif()
